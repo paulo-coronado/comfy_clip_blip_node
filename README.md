@@ -1,4 +1,4 @@
-# A ComfyUI Custom Node for adding BLIP in CLIPTextEncode
+# A ComfyUI Node for adding BLIP in CLIPTextEncode
 
 ## Announcement: [BLIP](https://github.com/salesforce/BLIP) is now officially integrated into CLIPTextEncode
 
