@@ -8,17 +8,18 @@
 - [x] Timm>=0.4.12 (already in ComfyUI)
 - [x] Gitpython (already in ComfyUI)
 
-### Local Standalone Installation
-Inside `ComfyUI_windows_portable\ComfyUI\custom_nodes\`, run:
+### Local Installation
+Inside ComfyUI_windows_portable\python_embeded, run:
+<pre>python.exe -m pip install fairscale</pre>
+
+And, inside ComfyUI_windows_portable\ComfyUI\custom_nodes\, run:
 <pre>git clone https://github.com/paulo-coronado/comfy_clip_blip_node</pre>
 
-The, **cd** into `comfy_clip_blip_node`, and run:
-<pre>..\..\..\python_embeded\python.exe -m pip install -r requirements.txt</pre>
-
 ### Google Colab Installation
-Add a cell anywhere, with the following code: 
+Add a cell with the following code:
 <pre>
-!cd custom_nodes && git clone https://github.com/paulo-coronado/comfy_clip_blip_node && cd comfy_clip_blip_node && pip install -r requirements.txt
+!pip install fairscale
+!cd custom_nodes && git clone https://github.com/paulo-coronado/comfy_clip_blip_node
 </pre>
 
 ### Acknowledgement
