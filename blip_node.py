@@ -116,7 +116,8 @@ class BlipConcat:
         if not os.path.exists(os.path.join('models', 'model_base_capfilt_large.pth')):
             model_file = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_capfilt_large.pth'
         else:
-            model_file = 'models/model_base_capfilt_large.pth'
+            print(f"\033[34mBLIP:\033[0m Using local model")
+            model_file = '../../models/blip/checkpoints/model_base_capfilt_large.pth'
 
         model = blip_decoder(pretrained=model_file, image_size=size, vit='base')
         model.eval()
