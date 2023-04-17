@@ -25,7 +25,7 @@ Add a cell with the following code:
 ### How to use
 1. Add the CLIPTextEncodeBLIP node;
 2. Connect the node with an image and select a value for min_length and max_length;
-3. Optional: if you want to embed the BLIP text in a prompt, use the keyword BLIP_TEXT (e.g. "a photo of BLIP_TEXT", medium shot, intricate details, highly detailed).
+3. Optional: if you want to embed the BLIP text in a prompt, use the keyword **BLIP_TEXT** (e.g. "a photo of BLIP_TEXT", medium shot, intricate details, highly detailed).
 
 ### Acknowledgement
 The implementation of **CLIPTextEncodeBLIP** relies on resources from <a href="https://github.com/salesforce/BLIP">BLIP</a>, <a href="https://github.com/salesforce/ALBEF">ALBEF</a>, <a href="https://github.com/huggingface/transformers">Huggingface Transformers</a>, and <a href="https://github.com/rwightman/pytorch-image-models/tree/master/timm">timm</a>. We thank the original authors for their open-sourcing.
