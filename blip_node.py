@@ -112,14 +112,16 @@ class BlipConcat:
             
         torch.hub.set_dir(blip_dir)
     
-        # Check if the model exists in the models directory
-        if not os.path.exists(os.path.join('models', 'model_base_capfilt_large.pth')):
-            model_file = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_capfilt_large.pth'
-        else:
-            print(f"\033[34mBLIP:\033[0m Using local model")
-            model_file = '../../models/blip/checkpoints/model_base_capfilt_large.pth'
+        model_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_capfilt_large.pth'
 
-        model = blip_decoder(pretrained=model_file, image_size=size, vit='base')
+        # Check if the model exists in the models directory
+        # if not os.path.exists(os.path.join('models', 'model_base_capfilt_large.pth')):
+        #     model_file = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_capfilt_large.pth'
+        # else:
+        #     print(f"\033[34mBLIP:\033[0m Using local model")
+        #     model_file = '../../models/blip/checkpoints/model_base_capfilt_large.pth'
+            
+        model = blip_decoder(pretrained=model_url, image_size=size, vit='base')
         model.eval()
         model = model.to(device)
         
