@@ -13,7 +13,7 @@ sys.path.append('..'+os.sep+'ComfyUI')
 
 NODE_FILE = os.path.abspath(__file__)
 BLIP_NODE_ROOT = os.path.dirname(NODE_FILE)
-MODELS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "models")
+MODELS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'models')
 
 # Freeze PIP modules
 def packages(versions=False):
