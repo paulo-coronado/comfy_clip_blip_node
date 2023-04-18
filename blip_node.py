@@ -106,6 +106,8 @@ class BlipConcat:
         else:
             tensor = transformImage(image, size, device)
                 
+        print('Models dir: ' + MODELS_DIR)
+        
         blip_dir = os.path.join(MODELS_DIR, 'blip')
         if not os.path.exists(blip_dir):
             os.mkdir(blip_dir)
