@@ -62,16 +62,16 @@ class BlipConcat:
                 "clip": ("CLIP",),
                 "image": ("IMAGE",),
                 "min_length": ("INT", {
-                    "default": 10, 
+                    "default": 5, 
                     "min": 0, # minimum value
                     "max": 200, # maximum value
-                    "step": 5 # slider's step
+                    "step": 1 # slider's step
                 }),
                 "max_length": ("INT", {
-                    "default": 30, 
+                    "default": 20, 
                     "min": 0, # minimum value
                     "max": 200, # maximum value
-                    "step": 5 # slider's step
+                    "step": 1 # slider's step
                 }),
                 "string_field": ("STRING", {
                     "multiline": True, #True if you want the field to look like the one on the ClipTextEncode node
