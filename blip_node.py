@@ -87,6 +87,9 @@ class BlipConcat:
     CATEGORY = "conditioning"
 
     def blip(self, clip, image, min_length, max_length, string_field):
+        print(f"\033[34mStarting BLIP...\033[0m")
+
+
         # Change the current working directory to BLIP_NODE_ROOT
         os.chdir(BLIP_NODE_ROOT)
 
