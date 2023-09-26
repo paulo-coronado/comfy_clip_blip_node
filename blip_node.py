@@ -7,22 +7,12 @@ from PIL import Image
 from torchvision import transforms
 from torchvision.transforms.functional import InterpolationMode
 from .adv_encode import advanced_encode
-
-# Add the ComfyUI directory to the system path
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "comfy"))
-sys.path.append(".." + os.sep + "ComfyUI")
+import folder_paths
 
 NODE_FILE = os.path.abspath(__file__)
 BLIP_NODE_ROOT = os.path.dirname(NODE_FILE)
-MODELS_DIR = os.path.join(
-    (
-        os.getcwd() + os.sep + "ComfyUI"
-        if not os.getcwd().startswith(("/content", "/workspace"))
-        else os.getcwd()
-    ),
-    "models",
-)
 
+MODELS_DIR = os.path.join(folder_paths.models_dir, "blip")
 
 # Freeze PIP modules
 def packages(versions=False):
