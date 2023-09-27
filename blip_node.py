@@ -9,11 +9,6 @@ from torchvision.transforms.functional import InterpolationMode
 from .adv_encode import advanced_encode
 import folder_paths
 
-NODE_FILE = os.path.abspath(__file__)
-BLIP_NODE_ROOT = os.path.dirname(NODE_FILE)
-
-MODELS_DIR = os.path.join(folder_paths.models_dir, "blip")
-
 # Freeze PIP modules
 def packages(versions=False):
     import subprocess
@@ -132,14 +127,7 @@ class BlipConcat:
         string_field,
     ):
         print(f"\033[34mStarting BLIP...\033[0m")
-
-        # Change the current working directory to BLIP_NODE_ROOT
-        os.chdir(BLIP_NODE_ROOT)
-
-        # Add BLIP_NODE_ROOT to the Python path
-        sys.path.insert(0, BLIP_NODE_ROOT)
-
-        from models.blip import blip_decoder
+        from .models.blip import blip_decoder
 
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -152,7 +140,7 @@ class BlipConcat:
         else:
             tensor = transformImage(image, size, device)
 
-        blip_dir = os.path.join(MODELS_DIR, "blip")
+        blip_dir = os.path.join(folder_paths.models_dir, "blip")
         if not os.path.exists(blip_dir):
             os.mkdir(blip_dir)
 

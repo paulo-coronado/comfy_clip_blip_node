@@ -22,10 +22,10 @@ import torch.backends.cudnn as cudnn
 import torch.distributed as dist
 from torch.utils.data import DataLoader
 
-from models.blip_pretrain import blip_pretrain
-import utils
-from utils import warmup_lr_schedule, step_lr_schedule
-from data import create_dataset, create_sampler, create_loader
+from .models.blip_pretrain import blip_pretrain
+import .utils
+from .utils import warmup_lr_schedule, step_lr_schedule
+from .data import create_dataset, create_sampler, create_loader
 
 def train(model, data_loader, optimizer, epoch, device, config):
     # train

@@ -22,9 +22,9 @@ import torch.backends.cudnn as cudnn
 import torch.distributed as dist
 from torch.utils.data import DataLoader
 
-from models.blip_retrieval import blip_retrieval
-import utils
-from data.video_dataset import VideoDataset
+from .models.blip_retrieval import blip_retrieval
+import .utils
+from .data.video_dataset import VideoDataset
 
 
 @torch.no_grad()

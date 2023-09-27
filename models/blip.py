@@ -18,8 +18,8 @@ from timm.models.hub import download_cached_file
 from torch import nn
 from transformers import BertTokenizer
 
-from models.med import BertConfig, BertLMHeadModel, BertModel
-from models.vit import VisionTransformer, interpolate_pos_embed
+from .med import BertConfig, BertLMHeadModel, BertModel
+from .vit import VisionTransformer, interpolate_pos_embed
 
 
 class BLIP_Base(nn.Module):
@@ -76,8 +76,8 @@ class BLIP_Base(nn.Module):
             return output.last_hidden_state
                
 class BLIP_Decoder(nn.Module):
-    def __init__(self,                 
-                 med_config = 'configs/med_config.json',  
+    def __init__(self,
+                 med_config = os.path.join(os.path.dirname(__file__), '..', 'configs', 'med_config.json'),
                  image_size = 384,
                  vit = 'base',
                  vit_grad_ckpt = False,
