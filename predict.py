@@ -13,9 +13,9 @@ from torchvision import transforms
 from torchvision.transforms.functional import InterpolationMode
 import cog
 
-from models.blip import blip_decoder
-from models.blip_vqa import blip_vqa
-from models.blip_itm import blip_itm
+from .models.blip import blip_decoder
+from .models.blip_vqa import blip_vqa
+from .models.blip_itm import blip_itm
 
 
 class Predictor(cog.Predictor):

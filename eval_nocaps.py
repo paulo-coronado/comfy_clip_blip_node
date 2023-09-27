@@ -22,10 +22,10 @@ import torch.backends.cudnn as cudnn
 import torch.distributed as dist
 from torch.utils.data import DataLoader
 
-from models.blip import blip_decoder
-import utils
-from data import create_dataset, create_sampler, create_loader
-from data.utils import save_result
+from .models.blip import blip_decoder
+import .utils
+from .data import create_dataset, create_sampler, create_loader
+from .data.utils import save_result
 
 @torch.no_grad()
 def evaluate(model, data_loader, device, config):
